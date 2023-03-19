@@ -35,7 +35,7 @@ app.engine(
 								: "") ?? "Chapter not found"
 					);
 				}
-				return "Not started yet";
+				return "";
 			},
 			/**
 			 * Get icon for each scraper

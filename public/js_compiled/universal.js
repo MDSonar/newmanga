@@ -97,13 +97,5 @@ document.querySelectorAll(".nav-footer .nav-link").forEach(function (link) {
 });
 
 
-function updateUrl() {
-  // Get the current URL
-  var url = window.location.href;
 
-  // Replace "manganelo" with "manga" in the URL
-  url = url.replace("manganelo", "manga");
 
-  // Update the URL to the new value
-  window.history.pushState({}, '', url);
-}

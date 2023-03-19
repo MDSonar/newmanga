@@ -48,8 +48,6 @@
 		<span>{{#if data.data.hasSeasons}}<span class="do-margin-right">S{{navigation.currentChapter.season}}</span>{{/if}} Ch {{ navigation.currentChapter.chapter }}</span>
 
 		{{!-- Loading progress, empty after loaded  --}}
-		<span class="current-loading-progress">00%</span>
-
 		<span class="reload-chapters-button hidden">
 			<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-refresh-cw"><polyline points="23 4 23 10 17 10"></polyline><polyline points="1 20 1 14 7 14"></polyline><path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"></path></svg>
 		</span>
@@ -80,12 +78,6 @@
 		{{!-- Scrollable section --}}
 		<div class="scroll chapters">
 			<h3 class="small-title">Chapters</h3>
-			{{#each data.data.chapters}}
-			<a class="chapter {{ isCurrentChapter this.season @root.navigation.currentChapter.season this.chapter @root.navigation.currentChapter.chapter }}" href="{{ genLink2 @root.data.provider @root.data.constant.slug this.hrefString }}">
-				<span class="label">{{this.label}}</span> 
-				{{#if this.progress}}<span class="progress" data-color="{{this.progress.percentageColor}}">{{this.progress.percentage}}%</span>{{/if}}
-			</a>
-			{{/each}}
 		</div>
  
 	</div>

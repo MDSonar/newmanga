@@ -35,7 +35,7 @@
 					{{/each}}
 				</div>
 
-				<div class="manga-page-section">
+				<!--div class="manga-page-section">
 					<h3 class="sub-title">Lists</h3>
 					<div class="lists-wrapper">
 						<div class="display-lists"></div>
@@ -53,9 +53,9 @@
 						<div class="bar-wrapper">
 							<div class="bar-inner badge-background" style="width: {{mangaProgress.percentage}}%"></div>
 						</div>
-						<p>You've read {{mangaProgress.done}} of {{mangaProgress.total}} chapters ({{mangaProgress.percentage}}%)</p>
+						<p>You've read {{mangaProgress.done}} of {{mangaProgress.total}} chapters</p>
 					</div>
-				</div>
+				</div-->
 				{{/if}}
 				<div class="chapter-list">
 					<h3 class="sub-title spread">
@@ -77,7 +77,6 @@
 								{{this.label}} 
 								<span class="date">{{getChapterDate this}}</span>
 							</span> 
-							{{#if this.progress}}<span class="progress" data-color="{{this.progress.percentageColor}}">{{this.progress.percentage}}%</span>{{/if}}
 						</a>
 						{{/each}}
 					</div>

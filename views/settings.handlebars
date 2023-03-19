@@ -3,7 +3,7 @@
 
 <div class="content-inner">
 	<h1 class="title">Settings</h1>
-	<p>These are app-wide settings.</p>
+	<!--p>These are app-wide settings.</p>
 
 	<section class="section">
 		<h2 class="sub-title">App icon</h2>
@@ -20,7 +20,7 @@
 			{{/each}}
 		</div>
 
-	</section>
+	</section-->
 
 	<section class="section">
 		<h2 class="sub-title">Theme</h2>
@@ -30,31 +30,34 @@
 
 	</section>
 
-	<section class="section app-wide-settings">
-		<h2 class="sub-title">App settings</h2>
-		<div class="setting-wrapper toggle no-spread ignore" data-setting="show-completed">
-			<input type="checkbox" class="switch" data-true="yes" data-false="no" {{#if showCompleted}}checked{{/if}} />
-			<label>Show series you "caught up on" in continue reading</label>
-		</div>
-		<div class="setting-wrapper toggle no-spread ignore" data-setting="show-unread-chapter-count">
-			<input type="checkbox" class="switch" data-true="yes" data-false="no" {{#if showUnreads}}checked{{/if}} />
-			<label>Show unread chapter count</label>
-		</div>
-		<div class="setting-wrapper toggle no-spread ignore" data-setting="show-nsfw">
-			<input type="checkbox" class="switch" data-true="yes" data-false="no" {{#if showNsfw}}checked{{/if}} />
-			<label>Show NSFW</label>
-		</div>
-		<div class="setting-wrapper toggle no-spread ignore" data-setting="store-nsfw">
-			<input type="checkbox" class="switch" data-true="yes" data-false="no" {{#if storeNsfw}}checked{{/if}} />
-			<label>Store NSFW progress</label>
-		</div>
-	</section>
+	<div style="display: none;">
+  <section class="section app-wide-settings">
+    <h2 class="sub-title">App settings</h2>
+    <div class="setting-wrapper toggle no-spread ignore" data-setting="show-completed">
+      <input type="checkbox" class="switch" checked="false" data-true="yes" data-false="no" />
+      <label>Show series you "caught up on" in continue reading</label>
+    </div>
+    <div class="setting-wrapper toggle no-spread ignore" data-setting="show-unread-chapter-count">
+      <input type="checkbox" class="switch" checked="true" data-true="yes" data-false="no" />
+      <label>Show unread chapter count</label>
+    </div>
+    <div class="setting-wrapper toggle no-spread ignore" data-setting="show-nsfw">
+      <input type="checkbox" class="switch" checked="true" data-true="yes" data-false="no" />
+      <label>Show NSFW</label>
+    </div>
+    <div class="setting-wrapper toggle no-spread ignore" data-setting="store-nsfw">
+      <input type="checkbox" class="switch" data-true="yes" data-false="no" {{#if storeNsfw}}checked{{/if}} />
+      <label>Store NSFW progress</label>
+    </div>
+  </section>
+</div>
+
 
 	<section class="section">
 		<h2 class="sub-title">Reader settings</h2>
 		{{> settings-inner }}
 	</section>
-	<section class="section">
+	<!--section class="section">
 		<h2 class="sub-title">Backups</h2>
 		<div class="backups">
 		{{#each backups}}
@@ -72,7 +75,7 @@
 			</div>
 		</div>
 		{{/each}}
-	</div>
+	</div-->
 </div>
 
 <script src="/js_compiled/reusable/reader-settings.js"></script>

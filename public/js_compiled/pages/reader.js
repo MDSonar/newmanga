@@ -136,7 +136,7 @@ function readerIsHorizontal() {
   var settings = getSettings();
   return settings["reader-direction"] === "horizontal" || settings["reader-direction"] === "horizontal-reversed";
 }
-
+ 
 // Scroll to page
 function scrollToPage() {
   // doImages();

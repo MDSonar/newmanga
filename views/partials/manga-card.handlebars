@@ -8,7 +8,7 @@
 	{{/if}}
 	">
 		<div class="poster-img" style="background-color: var(--border); background-image: url('{{manga.constant.posterUrl}}'); background-size: cover; background-position: center; background-repeat: no-repeat;">
-			<img src="{{getScraperIcon manga.provider}}" title={{manga.provider}} alt="{{manga.provider}}" class="provider-image">
+			<!--img src="{{getScraperIcon manga.provider}}" title={{manga.provider}} alt="{{manga.provider}}" class="provider-image"-->
 			{{#if toChapter}}
 			<div class="poster-inner">
 				<div class="poster-bottom">
@@ -16,9 +16,9 @@
 						{{getChapterName manga.progress manga}}
 					</div>
 					<div class="progress-bar-wrapper">
-						<div class="progress-bar-line" style="width: {{manga.progress.percentage}}%" data-width="{{manga.progress.percentage}}%"></div>
+						<div class="progress-bar-line"></div>
 					</div>
-				</div>
+				</div> 
 			</div>
 			{{/if}}
 			{{#if manga.unreadChapterCount}}
@@ -30,7 +30,7 @@
 		</div>
 	</a>
 	<div class="manga-meta">
-		<p class="progress">{{getProgressString manga}}</p>
+		<p class="progress"></p>
 		<div class="title-div">
 			<span class="flex">
 				{{#if progress.new}}
