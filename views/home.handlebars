@@ -1,0 +1,20 @@
+<div class="content-inner">
+	{{#each lists}}
+	{{> list list=this}}
+	{{/each}}
+	{{#if popular}}
+	<section class="section popular" data-list-id="popular" data-list-type="list">
+		<h2 class="sub-title spread do-spread"><span>Latest Release</span> {{> list-type }}</h2>
+		<div class="manga-grid">
+		{{#each popular}}
+			{{>manga-card manga=this}}
+		{{/each}}
+		</div>
+	</section>
+	{{/if}}
+
+</div>
+
+<script src="/js_compiled/pages/home.js"></script>
+<script src="/js_compiled/reusable/lists.js"></script>
+<script src="/js_compiled/reusable/list-type.js"></script>

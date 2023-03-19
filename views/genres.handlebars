@@ -1,0 +1,122 @@
+<link rel="stylesheet" href="/css/search.css">
+
+<div class="content-inner">
+	<h1 class="title">Genres</h1>
+
+	<div class="search-input">
+		<input type="text"  id="search-3" value="{{query}}" class="search-input" aria-label="Search" style="display:none;">
+		<select id="search-2" aria-label="Search" class="multi-column">
+				<option value="">Select a Genres</option>
+  				<option value="all">All</option>
+				<option value="action">Action</option>
+				<option value="adventure">Adventure</option>
+				<option value="comedy">Comedy</option>
+				<option value="cooking">Cooking</option>
+				<option value="doujinshi">Doujinshi</option>
+				<option value="drama">Drama</option>
+				<option value="erotica">Erotica</option>
+				<option value="fantasy">Fantasy</option>
+				<option value="gender bender">Gender bender</option>
+				<option value="harem">Harem</option>
+				<option value="historical">Historical</option>
+				<option value="horror">Horror</option>
+				<option value="isekai">Isekai</option>
+				<option value="josei">Josei</option>
+				<option value="manhua">Manhua</option>
+				<option value="manhwa">Manhwa</option>
+				<option value="martial arts">Martial arts</option>
+				<option value="mature">Mature</option>
+				<option value="mecha">Mecha</option>
+				<option value="medical">Medical</option>
+				<option value="mystery">Mystery</option>
+				<option value="one shot">One shot</option>
+				<option value="pornographic">Pornographic</option>
+				<option value="psychological">Psychological</option>
+				<option value="romance">Romance</option>
+				<option value="school life">School life</option>
+				<option value="sci fi">Sci fi</option>
+				<option value="seinen">Seinen</option>
+				<option value="shoujo">Shoujo</option>
+				<option value="shoujo ai">Shoujo ai</option>
+				<option value="shounen">Shounen</option>
+				<option value="shounen ai">Shounen ai</option>
+				<option value="slice of life">Slice of life</option>
+				<option value="smut">Smut</option>
+				<option value="sports">Sports</option>
+				<option value="supernatural">Supernatural</option>
+				<option value="tragedy">Tragedy</option>
+				<option value="webtoons">Webtoons</option>
+				<option value="yaoi">Yaoi</option>
+				<option value="yuri">Yuri</option>
+		</select>
+		<select id="type" aria-label="Search">
+			<option value="">Select Type</option>
+			<option value="?latest">Latest</option>
+			<option value="?newest">Newest</option>
+			<option value="?topview">Popular</option>
+		</select>
+		<select id="status" aria-label="Search">
+			<option value="">Select Status</option>
+			<option value="&all">All</option>
+			<option value="&ongoing">Ongoing</option>
+			<option value="&completed">Complete</option>
+		</select>
+		<button id="applyBtn">Apply</button>
+
+
+		<!--div class="alt-scrapers">
+			{{#each scrapers}}
+			<a class="secondary-button single-column scraper {{#if isCurrent}}badge-background{{/if}}" href="{{href}}">{{name}}</a>
+			{{/each}}
+			<a class="last"></a>
+		</div-->
+	</div>
+
+	<section class="section search-results" data-list-id="search" data-list-type="list">
+		<h2 class="sub-title spread do-spread"><span>
+			{{#if query}}
+			{{searchResults.length}} search result(s) for "{{query}}"
+			{{else}}
+			Popular right now
+			{{/if}}
+		</span>{{> list-type }}</h2>
+		{{#if searchResults.error}}
+		<div class="manga-grid-error">
+			<p class="title-error">{{searchResults.error}}</p>
+		</div>
+		{{else}}
+		<div class="manga-grid">
+			{{#each searchResults}}
+			{{> manga-card manga=this }}
+			{{/each}}
+		</div>
+		{{/if}}
+	</section>
+</div>
+
+<script src="/js_compiled/pages/search.js"></script>
+<script src="/js_compiled/reusable/list-type.js"></script>
+
+<script>
+  var inputs = document.getElementById("search-3");
+  applyBtn.addEventListener('click', () => {
+    const search2Value = document.getElementById('search-2').value;
+    const statusValue = document.getElementById('status').value;
+	const typeValue = document.getElementById('type').value;
+    inputs.value = search2Value + typeValue +  statusValue;
+	inputs.dispatchEvent(new Event("change"));
+    this.classList.add("active");
+  });
+
+  window.addEventListener('load', function() {
+  updateUrl();
+});
+
+</script>
+
+<style>
+	.multi-column {
+  column-count: 3; /* Change this value to adjust the number of columns */
+  column-gap: 1em; /* Change this value to adjust the gap between columns */
+} 
+</style>

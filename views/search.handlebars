@@ -1,0 +1,230 @@
+
+<link rel="stylesheet" href="/css/search.css">
+
+<div class="content-inner">
+	<h1 class="title">Search</h1>
+
+		<input type="text" placeholder="Search Here" id="search-2" value="{{query}}" class="search-input" aria-label="Search">
+		<select id="search-3" aria-label="Search" class="multi-column">
+				<option value="">Select a Genres</option>
+  				<option value="all">All</option>
+				<option value="action">Action</option>
+				<option value="adventure">Adventure</option>
+				<option value="comedy">Comedy</option>
+				<option value="cooking">Cooking</option>
+				<option value="doujinshi">Doujinshi</option>
+				<option value="drama">Drama</option>
+				<option value="erotica">Erotica</option>
+				<option value="fantasy">Fantasy</option>
+				<option value="gender bender">Gender bender</option>
+				<option value="harem">Harem</option>
+				<option value="historical">Historical</option>
+				<option value="horror">Horror</option>
+				<option value="isekai">Isekai</option>
+				<option value="josei">Josei</option>
+				<option value="manhua">Manhua</option>
+				<option value="manhwa">Manhwa</option>
+				<option value="martial arts">Martial arts</option>
+				<option value="mature">Mature</option>
+				<option value="mecha">Mecha</option>
+				<option value="medical">Medical</option>
+				<option value="mystery">Mystery</option>
+				<option value="one shot">One shot</option>
+				<option value="pornographic">Pornographic</option>
+				<option value="psychological">Psychological</option>
+				<option value="romance">Romance</option>
+				<option value="school life">School life</option>
+				<option value="sci fi">Sci fi</option>
+				<option value="seinen">Seinen</option>
+				<option value="shoujo">Shoujo</option>
+				<option value="shoujo ai">Shoujo ai</option>
+				<option value="shounen">Shounen</option>
+				<option value="shounen ai">Shounen ai</option>
+				<option value="slice of life">Slice of life</option>
+				<option value="smut">Smut</option>
+				<option value="sports">Sports</option>
+				<option value="supernatural">Supernatural</option>
+				<option value="tragedy">Tragedy</option>
+				<option value="webtoons">Webtoons</option>
+				<option value="yaoi">Yaoi</option>
+				<option value="yuri">Yuri</option>
+		</select>
+		<select id="type" aria-label="Search">
+			<option value="">Select Type</option>
+			<option value="?latest">Latest</option>
+			<option value="?newest">Newest</option>
+			<option value="?topview">Popular</option>
+		</select>
+		<select id="status" aria-label="Search">
+			<option value="">Select Status</option>
+			<option value="&all">All</option>
+			<option value="&ongoing">Ongoing</option>
+			<option value="&completed">Complete</option>
+		</select>
+		<button id="applyBtn">Apply</button>	
+		<!--div class="alt-scrapers">
+			{{#each scrapers}}
+			<a class="secondary-button single-column scraper {{#if isCurrent}}badge-background{{/if}}" href="{{href}}">{{name}}</a>
+			{{/each}}
+			<a class="last"></a>
+		</div-->
+
+
+	<section class="section search-results" data-list-id="search" data-list-type="list">
+		<h2 class="sub-title spread do-spread"><span>
+			{{#if query}}
+			<!--{{searchResults.length}} search result(s) for "{{query}}"-->
+			{{else}}
+			Latest right now
+			{{/if}}
+		</span>{{> list-type }}</h2>
+		{{#if searchResults.error}}
+		<div class="manga-grid-error">
+			<p class="title-error">{{searchResults.error}}</p>
+		</div>
+		{{else}}
+		<div class="manga-grid">
+			{{#each searchResults}}
+			{{> manga-card manga=this }}
+			{{/each}}
+		</div>
+		{{/if}}
+	</section>
+</div>
+	<div>
+		<button id="previous-btn">&laquo; Previous</button>
+		<button id="next-btn">Next &raquo;</button>
+		<br><br><br><br><br>
+	</div>
+
+
+<script src="/js_compiled/pages/search.js"></script>
+<script src="/js_compiled/reusable/list-type.js"></script>
+
+<script type="text/javascript">
+
+	var selectEl = document.getElementById("search-2");
+    var query = "{{query}}";
+    query = selectEl.value;
+    
+document.getElementById("next-btn").addEventListener("click", function() {
+    let selectedValue = selectEl.value;
+    let valueArr = selectedValue.split('/');
+    let actionName = valueArr[0];
+    let actionNumber = valueArr[1] ? parseInt(valueArr[1]) + 1 : 2;
+    selectEl.value = actionName + '/' + actionNumber;
+    selectEl.dispatchEvent(new Event("change"));
+    this.classList.add("active");
+});
+
+document.getElementById("previous-btn").addEventListener("click", function() {
+    let selectedValue = selectEl.value;
+    let valueArr = selectedValue.split('/');
+    let actionName = valueArr[0];
+    let actionNumber = valueArr[1] ? parseInt(valueArr[1]) - 1 : 1;
+    if (actionNumber < 1) {
+        this.classList.remove("active");
+        return;
+    }
+    selectEl.value = actionName + '/' + actionNumber;
+    selectEl.dispatchEvent(new Event("change"));
+    this.classList.add("active");
+});
+
+	var inputs = document.getElementById("search-2");
+  applyBtn.addEventListener('click', () => {
+    const search2Value = document.getElementById('search-3').value;
+    const statusValue = document.getElementById('status').value;
+	const typeValue = document.getElementById('type').value;
+    inputs.value = search2Value + typeValue +  statusValue;
+	inputs.dispatchEvent(new Event("change"));
+    this.classList.add("active");
+  });
+</script>
+
+<style>/* Styling for the search bar */
+.select-field {
+  display: inline-block;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+  margin-right: 10px;
+  width: 200px;
+  background-color: #fff;
+  color: #333;
+}
+
+/* Styling for the buttons */
+button {
+  display: inline-block;
+  background-color: #000000;
+  border: none;
+  color: #fff;
+  padding: 6px 20px;
+  font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #23527c;
+}
+
+/* Responsive styling */
+@media (max-width: 768px) {
+  button {
+    display: block;
+    width: 100%;
+  }
+}
+
+/* Effects for the select fields */
+
+.select-field::after {
+  content: '\f107';
+  font-family: FontAwesome;
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
+  font-size: 16px;
+  pointer-events: none;
+}
+
+.select-field select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  padding: 10px;
+  font-size: 16px;
+  width: 100%;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.select-field select:focus {
+  outline: none;
+  box-shadow: none;
+}
+
+/* Responsive styling for the select fields */
+@media (max-width: 768px) {
+  .select-field {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+}
+#search-3 {
+  margin-top: 10px;
+}
+#search-2 {
+  margin-bottom: 10px;
+}
+#applyBtn{
+	margin-bottom: 20px;
+}
+.title{margin-top: -35px;}
+</style>
