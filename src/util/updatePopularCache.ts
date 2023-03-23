@@ -12,7 +12,6 @@ import secretConfig from "../util/secretConfig";
 
 import { Progress } from "../types";
 import { getProviderId } from "../routers/manga-page";
-import { getAnnouncements } from "./getAnnouncements";
 
 const clean = (str: string | number) => {
 	return str.toString().replace(/\./g, "_");
@@ -34,7 +33,7 @@ class Updater {
 			chalk.yellowBright("[CACHE]") +
 				` Updating popular cache at ${new Date().toLocaleString()}`
 		);
-		const popular = await scrapers.Manganelo.search("");
+		const popular = await scrapers.Manga1.search("");
 
 		await Promise.all(
 			popular
@@ -43,7 +42,7 @@ class Updater {
 				.map(async (obj) => {
 					// Update manga and store new value in cache
 					await updateManga(
-						obj.provider ?? "Manganelo",
+						obj.provider ?? "Manga1",
 						obj.constant.slug,
 						true
 					);
@@ -271,8 +270,6 @@ class Updater {
 
 		// Write to db
 		console.info(chalk.green("[CLEANUP]") + " Done cleaning up");
-
-		getAnnouncements();
 	}
 }
 

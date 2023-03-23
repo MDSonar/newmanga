@@ -40,12 +40,12 @@ async function getData() {
 
 
 	let popular: ScraperResponse[] | SearchError = [];
-		popular = await doSearch("mangasee", "", {
+		popular = await doSearch("manga2", "", {
 			resultCount: 24,
 		}); // Empty search sorts by popular
 
 	let letests: ScraperResponse[] | SearchError = [];
-	letests = await doSearch("manganelo", "", {
+	letests = await doSearch("manga1", "", {
 			resultCount: 24,
 		}); // Empty search sorts by popular
 

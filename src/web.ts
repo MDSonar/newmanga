@@ -49,7 +49,7 @@ app.engine(
 			 * Generate HREF for links in-app
 			 */
 			genLink2(
-				provider = "manganelo",
+				provider = "manga1",
 				slug: string,
 				hrefString: string | null = null,
 				chapter = -1
@@ -162,7 +162,6 @@ app.use(bodyParser.json());
 // Routers
 app.use("/", routers.home);
 app.use("/search", routers.search);
-app.use("/genres", routers.genres);
 app.use("/lists", routers.lists);
 app.use("/popular", routers.popular);
 app.use("/", routers.settings);

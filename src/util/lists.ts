@@ -45,7 +45,7 @@ export async function getLists(justHome: boolean = false): Promise<List[]> {
 			list.entries = await Promise.all(
 				list.entries.map(async (entry) => {
 					entry.data = await updateManga(
-						entry.provider ?? "manganelo",
+						entry.provider ?? "manga1",
 						entry.slug
 					);
 					return entry;

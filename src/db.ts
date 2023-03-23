@@ -60,7 +60,7 @@ if (oldReading) {
 			};
 		};
 	} = {
-		manganelo: {}, // Mangasee was the default befor ethis update
+		manga1: {}, // was the default befor ethis update
 	};
 
 	console.info(
@@ -69,8 +69,8 @@ if (oldReading) {
 
 	// Generate new objects
 	for (const slug of Object.keys(oldReading)) {
-		newReading.manganelo[slug] = {
-			...(newReading.manganelo[slug] ?? {}),
+		newReading.manga1[slug] = {
+			...(newReading.manga1[slug] ?? {}),
 		};
 		for (const chapter of Object.keys(oldReading[slug])) {
 			const d = oldReading[slug][chapter];
@@ -80,7 +80,7 @@ if (oldReading) {
 					` Converting old reading to new: ${slug}'s ${chapter}`
 			);
 
-			newReading.manganelo[slug][chapter] = {
+			newReading.manga1[slug][chapter] = {
 				current: d.current,
 				total: d.total,
 				at: d.at,

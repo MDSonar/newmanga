@@ -8,20 +8,11 @@ document.querySelectorAll(".search-input").forEach(function (input) {
   input.addEventListener("change", function (event) {
     var query = event.currentTarget.value.trim();
     if (query && query.length > 0) {
-      location.href = "".concat(!location.pathname.startsWith("/search/") ? "/search/manganelo/" : "", "?q=").concat(encodeURIComponent(query));
+      location.href = "".concat(!location.pathname.startsWith("/search/") ? "/search/manga1/" : "", "?q=").concat(encodeURIComponent(query));
     }
   });
 });
 
-// Genres
-document.querySelectorAll(".genres-input").forEach(function (input) {
-  input.addEventListener("change", function (event) {
-    var query = event.currentTarget.value.trim();
-    if (query && query.length > 0) {
-      location.href = "".concat(!location.pathname.startsWith("/genres/") ? "/genres/manganelo/" : "", "?q=").concat(encodeURIComponent(query));
-    }
-  });
-});
 
 // Chapter quick select
 document.querySelectorAll(".toggle-quick-select").forEach(function (div) {

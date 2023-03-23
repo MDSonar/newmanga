@@ -50,7 +50,7 @@ export default async function getReading(
 
 	let reading: ScraperResponse[] = await Promise.all(
 		readingMeta.map(async (obj) => {
-			let manga = await updateManga(obj.provider ?? "manganelo", obj.slug);
+			let manga = await updateManga(obj.provider ?? "manga1", obj.slug);
 			manga = await setMangaProgress(manga);
 			return manga;
 		})

@@ -138,7 +138,7 @@ router.get("/settings/restore-backup/:filename", async (req, res) => {
 
 		// Merge reading
 		const r = db.get("reading_new") || {};
-		if (reading.manganelo) {
+		if (reading.manga1) {
 			for (const provider of Object.keys(reading)) {
 				if (!r[provider]) r[provider] = {};
 				for (const slug of Object.keys(reading[provider])) {
@@ -149,8 +149,8 @@ router.get("/settings/restore-backup/:filename", async (req, res) => {
 				}
 			}
 		} else {
-			r.manganelo = {
-				...(r.manganelo || {}),
+			r.manga1 = {
+				...(r.manga1 || {}),
 				...reading,
 			};
 		}

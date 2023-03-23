@@ -52,8 +52,8 @@ function sleep(ms: number) {
 }
 
 // Import Mangasee
-import MangaseeInstance from "./mangasee";
-export const Mangasee = MangaseeInstance;
+import Manga2Instance from "./mangasee";
+export const Manga2 = Manga2Instance;
 
 // Import MangaDex
 // import MangadexInstance from "./mangadex";
@@ -64,8 +64,8 @@ import RCOInstance from "./rco";
 export const RCO = RCOInstance;
 
 // Import Manganelo
-import ManganeloInstance from "./manganelo";
-export const Manganelo = ManganeloInstance;
+import Manga1Instance from "./manganelo";
+export const Manga1 = Manga1Instance;
 
 // Import ComicExtra
 import ComicExtraInstance from "./comicextra";
@@ -94,7 +94,7 @@ export const Guya = GuyaInstance;
 export const scrapers = {
 	//Mangasee
 	//Mangadex5,
-	Manganelo
+	Manga1
 	//Mangahere,
 	//RCO,
 	//ComicExtra,

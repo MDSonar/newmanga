@@ -175,8 +175,8 @@ async function addInfo(data: ScraperResponse) {
 		try {
 			if (
 				data.provider === "mangadex5" ||
-				data.provider === "mangasee" ||
-				data.provider === "manganelo" ||
+				data.provider === "manga2" ||
+				data.provider === "manga1" ||
 				data.provider === "mangahere"
 			) {
 				// Check for pre-existing (cached) banner URL

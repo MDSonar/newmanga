@@ -13,7 +13,7 @@ import db from "../db";
 router.get("/", (req, res) => {
 	const query = ((req.query.q ?? "") as string).trim();
 	res.redirect(
-		`/search/manganelo/${query ? `?q=${encodeURIComponent(query)}` : ""}`
+		`/search/manga1/${query ? `?q=${encodeURIComponent(query)}` : ""}`
 	);
 });
 

@@ -19,8 +19,8 @@ interface NewList {
 }
 
 const scrapersMapped = {
-	manganelo: "Manganelo",
-	mangasee: "Mangasee"
+	manga1: "Manga1",
+	manga2: "Manga2"
 	//mangadex: "Mangadex",
 	//rco: "RCO",
 	//nhentai: "nhentai",
@@ -290,9 +290,9 @@ router.get("/proxy-image", (req, res) => {
 	);
 
 	let headers: { [key: string]: string } = {};
-	if (req.query.referer === "mangasee") {
+	if (req.query.referer === "manga2") {
 		headers.referer = "https://mangasee123.com";
-	} else if (req.query.referer === "manganelo") {
+	} else if (req.query.referer === "manga1") {
 		headers.referer = "https://readmanganato.com/";
 	} else if (req.query.referer === "mangahere") {
 		headers.referer = "https://www.mangahere.cc/";

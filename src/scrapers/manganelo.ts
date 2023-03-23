@@ -7,11 +7,11 @@ import { Scraper, SearchOptions } from "./types";
 import { getProviderId, isProviderId } from "../routers/manga-page";
 import updateManga from "../util/updateManga";
 
-export class manganeloClass extends Scraper {
+export class manga1Class extends Scraper {
 	constructor() {
 		super();
-		this.provider = "Manganelo";
-		this.searchDisplay = "Manganato";
+		this.provider = "Manga1";
+		this.searchDisplay = "Manga1";
 		this.canSearch = true;
 		this.nsfw = true;
 	}
@@ -141,7 +141,7 @@ export class manganeloClass extends Scraper {
 
 		// Get details for each search result
 		const searchResultData: ScraperResponse[] = await Promise.all(
-			ids.map((id) => updateManga("manganelo", id))
+			ids.map((id) => updateManga("manga1", id))
 		);
 
 		return searchResultData;
@@ -170,7 +170,7 @@ export class manganeloClass extends Scraper {
 			raceResult.err === "This request took too long"
 		) {
 			console.error(
-				chalk.red("[MANGANELO]") +
+				chalk.red("[MANGA1]") +
 					` A request for '${slug}' at '${chapterId}' took too long and has timed out`
 			);
 		}
@@ -311,7 +311,7 @@ export class manganeloClass extends Scraper {
 			};
 		} catch (err) {
 			console.error(
-				chalk.red("[MANGANELO]") +
+				chalk.red("[MANGA1]") +
 					` A request for '${slug}' at '${chapterId}' has errored`
 			);
 			return error(-1, err);
@@ -320,5 +320,5 @@ export class manganeloClass extends Scraper {
 }
 
 // Generate manganelo object and export it
-const manganelo = new manganeloClass();
-export default manganelo;
+const manga1 = new manga1Class();
+export default manga1;

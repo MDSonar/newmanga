@@ -49,7 +49,7 @@ router.get("/json", async (req, res) => {
 async function getData() {
 
 	let popular: ScraperResponse[] | SearchError = [];
-		popular = await doSearch("mangasee", "", {
+		popular = await doSearch("manga2", "", {
 			resultCount: 50,
 		}); // Empty search sorts by popular
 

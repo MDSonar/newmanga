@@ -2,23 +2,23 @@ import { ScraperResponse } from "../types";
 
 /** All available scrapers */
 export type Provider =
-	| "Mangasee"
+	| "Manga2"
 	| "Mangadex"
 	| "RCO"
 	| "nhentai"
 	| "nhentainet"
-	| "Manganelo"
+	| "Manga1"
 	| "ComicExtra"
 	| "Mangahere"
 	| "Mangadex5"
 	| "Guya";
 export type ProviderId =
-	| "mangasee"
+	| "manga2"
 	| "mangadex"
 	| "rco"
 	| "nhentai"
 	| "nhentainet"
-	| "manganelo"
+	| "manga1"
 	| "comicextra"
 	| "mangahere"
 	| "mangadex5"

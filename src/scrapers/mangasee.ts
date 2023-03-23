@@ -58,10 +58,10 @@ interface ChapterResponse {
 	ChapterName: string | null;
 }
 
-export class MangaseeClass extends Scraper {
+export class Manga2Class extends Scraper {
 	constructor() {
 		super();
-		this.provider = "Mangasee";
+		this.provider = "Manga2";
 		this.canSearch = true;
 		this.nsfw = false;
 	}
@@ -150,7 +150,7 @@ export class MangaseeClass extends Scraper {
 			// Get details for each search result
 			const searchResultData: ScraperResponse[] = await Promise.all(
 				matchedResults.map((item: DirectoryItem) =>
-					updateManga("Mangasee", item[Directory.Slug])
+					updateManga("Manga2", item[Directory.Slug])
 				)
 			);
 
@@ -194,7 +194,7 @@ export class MangaseeClass extends Scraper {
 			raceResult.err === "This request took too long"
 		) {
 			console.error(
-				chalk.red("[MANGASEE]") +
+				chalk.red("[MANGA2]") +
 					` A request for '${slug}' at '${chapterId}' took too long and has timed out`
 			);
 		}
@@ -390,8 +390,8 @@ export class MangaseeClass extends Scraper {
 }
 
 // Generate mangasee object and export it
-const Mangasee = new MangaseeClass();
-export default Mangasee;
+const Manga2 = new Manga2Class();
+export default Manga2;
 
 /**
  * Normalize a number string.
