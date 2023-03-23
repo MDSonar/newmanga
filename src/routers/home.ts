@@ -17,11 +17,11 @@ router.get("/", async (req, res) => {
 	await doMangadexMigration();
 
 	// Get all data neccesary
-	const { popular } = await getData();
+	const {letests, popular } = await getData();
 
 
 	res.render("home", {
-		//letest,
+		letests,
 		popular,
 		isHome: true,
 	});
@@ -38,22 +38,20 @@ router.get("/json", async (req, res) => {
 async function getData() {
 
 
-	// Get popular manga
-	const maxReading = Number(
-		process.env.MAXREADINGTOSHOWPOPULAR ??
-			secretConfig.max_reading_to_show_popular ??
-			10
-	);
 
 	let popular: ScraperResponse[] | SearchError = [];
-		popular = await doSearch("manganelo", "", {
+		popular = await doSearch("mangasee", "", {
 			resultCount: 24,
 		}); // Empty search sorts by popular
-	
+
+	let letests: ScraperResponse[] | SearchError = [];
+	letests = await doSearch("manganelo", "", {
+			resultCount: 24,
+		}); // Empty search sorts by popular
 
 	// Set progress for popular manga
 
-	return { popular};
+	return { popular, letests};
 }
 
 export default router;
