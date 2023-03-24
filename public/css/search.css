@@ -84,6 +84,20 @@ button#previous-btn, button#next-btn {
 	box-shadow: none;
   }
   
+/* Scroll */
+  .dropdown::-webkit-scrollbar{
+	display: none;
+  }
+  .dropdown{
+	-ms-overflow-style: none;
+	scrollbar-width: none;
+  }
+.select{
+	background: transparent;
+	border: none;
+	border-bottom: 2px solid red;
+}
+	  
   /* Make buttons responsive */
   @media only screen and (max-width: 768px) {
 	button#previous-btn, button#next-btn {

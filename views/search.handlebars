@@ -5,7 +5,7 @@
 	<h1 class="title">Search</h1>
 
 		<input type="text" placeholder="Search Here" id="search-2" value="{{query}}" class="search-input" aria-label="Search">
-		<select id="search-3" aria-label="Search" class="multi-column">
+		<select id="search-3" aria-label="Search" class="dropdown select">
 				<option value="">Select a Genres</option>
   				<option value="all">All</option>
 				<option value="action">Action</option>
@@ -49,13 +49,13 @@
 				<option value="yaoi">Yaoi</option>
 				<option value="yuri">Yuri</option>
 		</select>
-		<select id="type" aria-label="Search">
+		<select id="type" aria-label="Search" class="select">
 			<option value="">Select Type</option>
 			<option value="?latest">Latest</option>
 			<option value="?newest">Newest</option>
 			<option value="?topview">Popular</option>
 		</select>
-		<select id="status" aria-label="Search">
+		<select id="status" aria-label="Search" class="select">
 			<option value="">Select Status</option>
 			<option value="&all">All</option>
 			<option value="&ongoing">Ongoing</option>
