@@ -39,7 +39,7 @@ export interface DirectoryItem {
 }
 
 const headers = {
-	"user-agent": "Adolla",
+	"user-agent": "Mangar",
 };
 
 /** This is a chapter in mangasee API */

@@ -19,7 +19,7 @@ const defaults: Database = {
 };
 
 // Iniate new DB
-const homePath = path.join(os.homedir(), ".adolla");
+const homePath = path.join(os.homedir(), ".mangar");
 const dbPath = path.join(homePath, "data.json");
 if (!fs.existsSync(homePath)) {
 	fs.mkdirSync(homePath);

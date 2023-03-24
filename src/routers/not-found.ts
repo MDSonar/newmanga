@@ -11,7 +11,7 @@ router.get("/", async (req, res) => {
 
 	if (req.query.t === "captcha") {
 		message =
-			"This source is making Adolla take a captcha, but since it is a robot, it can't do that.";
+			"This source is making Mangar take a captcha, but since it is a robot, it can't do that.";
 	}
 
 	res.render("not-found", {

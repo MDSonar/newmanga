@@ -143,7 +143,7 @@ export class mangadexClass extends Scraper {
 				allChapters = [...allChapters, ...mdChapters];
 			}
 
-			// Map fetched chapters into Adolla format
+			// Map fetched chapters into Mangar format
 
 			let largestVolume = 0;
 			for (let chapter of allChapters) {

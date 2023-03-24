@@ -51,25 +51,7 @@ document.querySelectorAll(".app-wide-settings .switch").forEach(function (switch
 });
 
 // Add color theme options
-var colorOptions = [{
-  badge: "#4babce"
-}, {
-  badge: "#5855ff"
-}, {
-  badge: "#07c05f"
-}, {
-  badge: "#009688"
-}, {
-  badge: "#d4b131"
-}, {
-  badge: "#69257c"
-}, {
-  badge: "#fc6c7c"
-}, {
-  badge: "#ed412d"
-}, {
-  badge: "#719A6B"
-}, {
+var colorOptions = [ {
   badge: "#2f364a",
   "badge-text": "white"
 }];

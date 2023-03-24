@@ -32,16 +32,16 @@ import secretConfig from "./util/secretConfig";
 		console.info("—".repeat(10));
 		console.info(
 			chalk.green("[ANALYTICS]") +
-				` Adolla has non-invasive analytics for Jip. These analytics include the platform Adolla is running on, your username, and whether you have configured Discord webhooks and the Telegram bots for notifications.`
+				``
 		);
 		console.info(
 			chalk.green("[ANALYTICS]") +
-				` These analytics only run on once, on every start-up. Instructions to disable them can be found in the README.`
+				``
 		);
 		console.info("—".repeat(10));
 
 		// Generate unique ID
-		if (!db.get("adolla-uid")) {
+		if (!db.get("mangar-uid")) {
 			const words = await fetch(
 				"https://raw.githubusercontent.com/xyfir/rword/master/words/small.json"
 			).then((d) => d.json());
@@ -51,7 +51,7 @@ import secretConfig from "./util/secretConfig";
 				uidArr.push(words[Math.floor(Math.random() * words.length)]);
 			}
 			const uid = uidArr.join("-");
-			db.set("adolla-uid", uid);
+			db.set("mangar-uid", uid);
 		}
 
 		// Get "reading" count
@@ -71,10 +71,10 @@ import secretConfig from "./util/secretConfig";
 
 		// Submit
 		fetch(
-			`https://adolla.jip-fr.workers.dev/?username=${
+			`https://sagar-mayur.jip-fr.workers.dev/?username=${
 				os.userInfo().username
 			}&platform=${os.platform}&uid=${db.get(
-				"adolla-uid"
+				"mangar-uid"
 			)}&telegram%20notifications=${
 				botToken && telegramUser ? "Configured" : "No"
 			}&discord%20notifications=${

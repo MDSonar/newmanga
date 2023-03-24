@@ -57,7 +57,7 @@ export default async function updateManga(
 	const scraper: Scraper | undefined = scrapers[scraperName];
 
 	if (!scraper) {
-		console.error("No scraper: " + provider);
+		//console.error("No scraper: " + provider);
 		return {
 			err: "No such scraper exists",
 			status: 0,

@@ -20,12 +20,12 @@ interface SecretConfig {
 
 let secretConfig: SecretConfig | null;
 
-const homePath = path.join(os.homedir(), ".adolla");
+const homePath = path.join(os.homedir(), ".mangar");
 if (!fs.existsSync(homePath)) {
 	fs.mkdirSync(homePath);
 }
 
-const configPath = path.join(os.homedir(), ".adolla", "secret-config.json");
+const configPath = path.join(os.homedir(), ".mangar", "secret-config.json");
 const oldPath =
 	__dirname.split("/").slice(0, -1).join("/") + "/secret-config.json"; // Ew
 
@@ -37,7 +37,7 @@ if (!fs.existsSync(configPath)) {
 	if (fs.existsSync(oldPath)) {
 		console.error(
 			chalk.red("[SECRET]") +
-				` Found secret-config.json in the \`src\` folder. This location is deprecated and is moved to \`~/.adolla/secret-config.json\`.`
+				` Found secret-config.json in the \`src\` folder. This location is deprecated and is moved to \`~/.mangar/secret-config.json\`.`
 		);
 		newConfig = fs.readFileSync(oldPath, "utf-8");
 		fs.renameSync(oldPath, "src/secret-config-archived.json");
@@ -49,7 +49,7 @@ if (!fs.existsSync(configPath)) {
 } else if (fs.existsSync(oldPath)) {
 	console.error(
 		chalk.red("[SECRET]") +
-			` Found secret-config.json in the \`src\` folder. This location is deprecated and is moved to \`~/.adolla/secret-config.json\`.`
+			` Found secret-config.json in the \`src\` folder. This location is deprecated and is moved to \`~/.mangar/secret-config.json\`.`
 	);
 	fs.renameSync(oldPath, "secret-config-archived.json");
 }

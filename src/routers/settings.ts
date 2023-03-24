@@ -8,7 +8,7 @@ import path from "path";
 import { removeData } from "./lists";
 import { List } from "../types";
 
-const homePath = path.join(os.homedir(), ".adolla");
+const homePath = path.join(os.homedir(), ".mangar");
 const backupsPath = path.join(homePath, "backups", "");
 
 const router = express.Router();
@@ -230,8 +230,8 @@ router.get("/manifest.json", (req, res) => {
 		});
 
 	res.json({
-		name: `${process.env.dev ? "DEV " : ""}Adolla`,
-		short_name: `${process.env.dev ? "DEV " : ""}Adolla`,
+		name: `${process.env.dev ? "DEV " : ""}Mangar`,
+		short_name: `${process.env.dev ? "DEV " : ""}Mangar`,
 		lang: "EN",
 		start_url: "/",
 		display: "standalone",

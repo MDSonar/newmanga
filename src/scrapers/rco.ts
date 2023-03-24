@@ -263,17 +263,17 @@ class RCOClass extends Scraper {
 			}
 		}
 
-		// Map to Adolla style format
+		// Map to Mangar style format
 		const chapterCount = query === "" ? 15 : options.resultCount;
 
-		// To Adolla data
+		// To Mangar data
 		const searchResults = await Promise.all(
 			resultIds
 				.slice(0, chapterCount)
 				.map((id) => updateManga("RCO", id.toString()))
 		);
 
-		// Return Adolla-formatted search results
+		// Return Mangar-formatted search results
 		return searchResults.filter((r) => r.success);
 	}
 }

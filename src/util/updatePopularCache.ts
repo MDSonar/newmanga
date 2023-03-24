@@ -186,8 +186,8 @@ class Updater {
 														},
 														body: JSON.stringify({
 															avatar_url:
-																"https://raw.githubusercontent.com/AdollaApp/Adolla/master/public/icons/white-on-blue.png",
-															username: "Adolla",
+																"manga.app.png",
+															username: "Mangar",
 															embeds: [
 																{
 																	title: `New chapter for **${data.constant.title}**! (${nextChapter.label})`,
@@ -196,10 +196,9 @@ class Updater {
 																	url,
 																	color: 4959182,
 																	author: {
-																		name: "Adolla",
-																		url: "https://jipfr.nl/adolla",
+																		name: "Mangar",
 																		icon_url:
-																			"https://raw.githubusercontent.com/AdollaApp/Adolla/master/public/icons/white-on-blue.png",
+																			"https://MangarURL.png",
 																	},
 																},
 															],

@@ -1044,6 +1044,7 @@ input, textarea {
 	display: grid;
 	grid-template-columns: repeat(auto-fit, minmax(1px, 1fr));
 	justify-items: center;
+	background-color:#2b2b2b
 }
 
 .pages[data-reader-direction="horizontal"] .pageImg, .pages[data-reader-direction="horizontal-reversed"] .pageImg {
